@@ -22,9 +22,8 @@
     ├── ClusterIP
     ├── NodePort
     └── LoadBalancer
-```
 
-### Detailed Breakdown:
+## Detailed Breakdown:
 
 - **Cluster**: The top-level structure that contains both master and worker nodes.
   
