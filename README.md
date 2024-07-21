@@ -1,2 +1,2 @@
 # AWS-EKS - eksctl, kubectl
-!alt![alt text](image.png)
+![alt text](image.png)
