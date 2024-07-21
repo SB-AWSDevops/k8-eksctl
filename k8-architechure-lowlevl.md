@@ -1,5 +1,7 @@
 ## Low-Level Kubernetes (K8s) Architecture
 
+![alt text](image-1.png)
+
 ### 1. Cluster
 - **Master Node**
   - **API Server**
