@@ -1,0 +1,42 @@
+User Command
+   |
+   v
+kubectl
+   ├── Parse Command
+   ├── Construct HTTP Request
+   │   ├── HTTP Method
+   │   ├── URL
+   │   ├── Headers (Authorization, Content-Type)
+   │   └── Body (for non-GET requests)
+   |
+   v
+HTTP Request Transmission
+   ├── TLS Encryption
+   ├── Authorization Header
+   └── Send to API Server
+   |
+   v
+Kubernetes API Server
+   ├── Receive Request
+   ├── Authentication
+   ├── Authorization
+   ├── Validate Request
+   ├── Route to Endpoint
+   ├── Interaction with etcd
+   │   ├── Read Operation (for GET requests)
+   │   └── Write Operation (for POST, PUT, DELETE requests)
+   └── Construct HTTP Response
+       ├── Status Code
+       ├── Headers
+       └── Body (Data or Error Message)
+   |
+   v
+HTTP Response Transmission
+   ├── TLS Encryption
+   └── Send Response to kubectl
+   |
+   v
+kubectl
+   ├── Parse Response
+   ├── Handle Errors
+   └── Format and Display Output
