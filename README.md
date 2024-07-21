@@ -1,6 +1,6 @@
 ## Kubernetes (K8s) Architecture
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 
 ### Kubernetes (K8s)
