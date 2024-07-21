@@ -40,3 +40,46 @@ kubectl
    ├── Parse Response
    ├── Handle Errors
    └── Format and Display Output
+
+** To understand the low-level interaction between kubectl and the Kubernetes API Server, you need to delve into the technical details of how API requests are constructed, transmitted, processed, and responded to. Here’s a breakdown of the low-level interactions:
+
+Low-Level Interaction Flow:
+
+User Command:
+
+User executes a command like kubectl get pods.
+kubectl:
+
+Command Parsing: kubectl parses the command and options specified by the user.
+Request Construction: It constructs an HTTP request based on the command. For example:
+HTTP Method: GET
+URL: https://<api-server-address>/api/v1/pods
+Headers: Includes authentication tokens and content-type headers.
+Body: Usually empty for GET requests.
+HTTP Request Transmission:
+
+TLS Encryption: The request is encrypted using TLS (Transport Layer Security) to ensure secure communication.
+Authorization Header: kubectl includes an authorization header containing the bearer token or client certificate to authenticate the request.
+Kubernetes API Server:
+
+Receives Request: The API Server listens on port 6443 by default.
+Authentication: The API Server checks the authorization header against its authentication mechanisms (e.g., bearer tokens, client certificates).
+Authorization: It verifies the requestor’s permissions using RBAC (Role-Based Access Control).
+Request Validation: It validates the request format, URL path, and parameters according to the Kubernetes API specification.
+Routing: Routes the request to the appropriate API endpoint (e.g., /api/v1/pods).
+Interaction with etcd:
+Read Operation: For GET requests, it queries etcd to retrieve the requested resource.
+Write Operation: For POST, PUT, or DELETE requests, it updates the state in etcd accordingly.
+Response Construction:
+Constructs an HTTP response with status code, headers, and body.
+For successful operations, the body contains the requested data or a confirmation message.
+For errors, the body includes an error message and code.
+HTTP Response Transmission:
+
+TLS Encryption: The response is encrypted using TLS.
+Transmission: The API Server sends the response back to kubectl.
+kubectl:
+
+Response Parsing: kubectl parses the HTTP response.
+Error Handling: Handles any errors returned by the API Server.
+Output Formatting: Formats the response data into a user-friendly format (e.g., tables, JSON, YAML) and displays it in the terminal.
