@@ -1,6 +1,7 @@
 ## Kubernetes (K8s) Architecture
+```json
 
-│
+|
 ├── Cluster
 │   │
 │   ├── Master Node
@@ -23,6 +24,7 @@
     ├── ClusterIP
     ├── NodePort
     └── LoadBalancer
+```
 
 ## Detailed Breakdown:
 
