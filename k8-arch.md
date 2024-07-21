@@ -1,5 +1,5 @@
 ## Kubernetes (K8s) Architecture
-```json
+```css
 
 |
 ├── Cluster
