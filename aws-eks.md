@@ -1,3 +1,4 @@
+```
 AWS EKS
 ├── **EKS Cluster**
 │   ├── **Master Node**
@@ -37,3 +38,4 @@ AWS EKS
     └── **Charts**
         ├── Pre-configured Kubernetes resources
         └── Stored in repositories for reuse
+        ```
