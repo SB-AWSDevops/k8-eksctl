@@ -1,4 +1,4 @@
-## Low-Level Kubernetes (K8s) Architecture
+## Kubernetes (K8s) Architecture
 
 ![alt text](image-1.png)
 
