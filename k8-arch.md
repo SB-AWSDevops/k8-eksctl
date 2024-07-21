@@ -1,7 +1,4 @@
-Sure! Here's a simplified tree format to understand Kubernetes (K8s) architecture:
-
-```
-Kubernetes (K8s) Architecture
+## Kubernetes (K8s) Architecture
 │
 ├── Cluster
 │   │
